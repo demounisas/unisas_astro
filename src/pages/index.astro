@@ -1,8 +1,4 @@
 ---
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
+import raw from '../html/index.html?raw';
 ---
-
-<Layout>
-	<Hero />
-</Layout>
+<Fragment set:html={raw} />

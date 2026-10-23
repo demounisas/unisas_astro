@@ -1,0 +1,7 @@
+.lead-form .field-error{display:none;margin-top:2px;font-size:0.74rem;font-weight:500;line-height:1.35;color:#FF9C8F;}
+  .lead-form .field-error.is-visible{display:block;}
+  .lead-form [aria-invalid="true"],
+  .lead-form [aria-invalid="true"]:focus{border-color:#FF7A6B !important;box-shadow:0 0 0 3px rgba(255,122,107,0.22) !important;}
+
+.lead-form button[type="submit"].btn-primary,
+.lead-form button[type="submit"].btn-primary:hover{color:#fff !important;}

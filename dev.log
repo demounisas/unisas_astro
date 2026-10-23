@@ -1,0 +1,41 @@
+(node:16968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+13:06:35 [@wix/astro-wix-hosting-adapter] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+13:06:35 [@wix/astro-wix-hosting-adapter] If you see the error "Invalid binding `SESSION`" in your build output, you need to add the binding to your wrangler config file.
+Using vars defined in .env.local
+(node:23580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+13:06:38 [build] Waiting for integration "@wix/astro-wix-hosting-adapter", hook "astro:server:setup"...
+13:06:40 [types] Generated 4ms
+13:06:40 [content] Syncing content
+13:06:40 [content] Synced content
+13:06:40 [vite] Re-optimizing dependencies because vite config has changed
+13:06:40 [WARN] [vite] Failed to resolve dependency: @wix/stores, present in client 'optimizeDeps.include'
+
+ astro  v5.18.2 ready in 8457 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+13:06:42 watching for file changes...
+13:06:44 [wix]App manifest updated. Refresh existing browser tabs to view the latest changes.
+13:07:17 [200] / 3478ms
+13:07:19 [200] /about-us 1155ms
+13:07:20 [200] /contact 1225ms
+13:07:21 [200] /thank-you 1242ms
+13:07:23 [200] /about-us 1315ms
+13:07:24 [200] / 775ms
+Supabase insert failed Error: Supabase not configured
+    at supabase (eval at runInlinedModule [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mvite[24m/dist/node/module-runner.js:1062:11), <anonymous>:95:97[90m)[39m
+    at saveToSupabase (eval at runInlinedModule [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mvite[24m/dist/node/module-runner.js:1062:11), <anonymous>:105:21[90m)[39m
+    at Module.POST (eval at runInlinedModule [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mvite[24m/dist/node/module-runner.js:1062:11), <anonymous>:69:70[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at async renderEndpoint [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mastro[24m/dist/runtime/server/endpoint.js:37:18[90m)[39m
+    at async lastNext [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mastro[24m/dist/core/render-context.js:202:23[90m)[39m
+    at async onRequest (eval at runInlinedModule [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mvite[24m/dist/node/module-runner.js:1062:11), <anonymous>:88:19[90m)[39m
+    at async onRequest (eval at runInlinedModule [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mvite[24m/dist/node/module-runner.js:1062:11), <anonymous>:3660:9[90m)[39m
+    at async callMiddleware [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mastro[24m/dist/core/middleware/callMiddleware.js:11:10[90m)[39m
+    at async RenderContext.render [90m(file:///C:/Users/jeevi/OneDrive/Documents/KARTHIK%20MEDIA%20PROJECTS/Unisas%20Live/unisas-astro/[39mnode_modules/[4mastro[24m/dist/core/render-context.js:249:22[90m)[39m
+13:07:26 [200] POST /api/lead 1768ms
