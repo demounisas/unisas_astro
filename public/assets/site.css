@@ -1266,9 +1266,21 @@
   /* ---------- Odoo app grid (modules) ---------- */
   #modules{background:#DCEBFC;}
   .app-panel{padding:clamp(8px,2vw,24px) 0 0;}
+  @media (min-width:1101px){ .app-panel{margin-inline:calc((100% - min(100vw - 80px, 1500px)) / 2);} }
   .app-desc{margin-top:-8px;font-size:0.8rem;line-height:1.45;color:#5B6577;text-align:center;max-width:22ch;}
   .app-grid{--cols:6;--gx:clamp(12px,2vw,24px);display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,3vw,40px) var(--gx);}
   .app-grid > .app-tile{flex:0 0 calc((100% - (var(--cols) - 1) * var(--gx)) / var(--cols));min-width:0;}
+  .app-name{min-height:2.5em;}
+  @media (min-width:1101px){ .app-grid > .app-tile[href="/hr-management-software"] .app-name{white-space:nowrap;} }
+  @supports (grid-template-rows:subgrid){
+    @media (min-width:1101px){
+      .app-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gx);row-gap:clamp(24px,3vw,40px);justify-content:stretch;}
+      .app-grid > .app-tile{grid-column:span 2;grid-row:span 3;display:grid;grid-template-rows:subgrid;grid-template-columns:minmax(0,1fr);min-width:0;row-gap:14px;justify-items:center;align-items:start;}
+      .app-grid > .app-tile:nth-child(7){grid-column:2 / span 2;}
+      .app-name{min-height:0;}
+    }
+    @media (min-width:1400px){ .app-name{white-space:nowrap;} }
+  }
   @media (max-width:1100px){ .app-grid{--cols:4;} }
   @media (max-width:900px){ .app-grid{--cols:3;} }
   @media (max-width:560px){ .app-grid{--cols:2;} }
@@ -1279,7 +1291,7 @@
   }
   .app-ic svg{width:54%;height:54%;overflow:visible;}
   .app-ic .m{mix-blend-mode:multiply;}
-  .app-name{font-size:clamp(0.84rem,1.15vw,1.05rem);font-weight:500;text-align:center;line-height:1.25;}
+  .app-name{font-size:clamp(0.84rem,0.95vw,0.9rem);font-weight:500;text-align:center;line-height:1.25;}
   .app-tile:hover .app-ic,.app-tile:focus-visible .app-ic{transform:translateY(-5px);border-color:#28507F;box-shadow:0 0 0 5px rgba(40,80,127,0.12),0 0 26px rgba(40,80,127,0.5),0 14px 30px rgba(40,80,127,0.28);}
   .app-more{margin:clamp(28px,4vw,44px) 0 0;text-align:center;font-size:0.95rem;color:#44506A;}
   .app-more a{color:var(--navy-800);font-weight:600;}
