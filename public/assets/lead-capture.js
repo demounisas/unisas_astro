@@ -51,6 +51,7 @@
     }).then(function(r){
       if(!r.ok) throw new Error('HTTP ' + r.status);
       if(window.gtag) gtag('event', 'generate_lead');
+      try { sessionStorage.setItem('unisas_lead_ok', '1'); } catch(e){}
       window.location.href = '/thank-you';
     }).catch(function(){
       delete form.dataset.sending;

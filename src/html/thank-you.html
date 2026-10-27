@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>
+  // only reachable right after a successful form submission
+  (function(){ var ok = false; try { ok = sessionStorage.getItem('unisas_lead_ok') === '1'; } catch(e){} if(!ok) location.replace('/'); })();
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Thank You | Unisas</title>
@@ -169,8 +173,21 @@
               </select>
             </label>
           </div>
+          <label>Current system you use
+            <select name="current_system">
+              <option>Not sure / none yet</option>
+              <option>Spreadsheets / Excel</option>
+              <option>Tally</option>
+              <option>Zoho</option>
+              <option>SAP</option>
+              <option>QuickBooks</option>
+              <option>Microsoft Dynamics</option>
+              <option>Older Odoo version</option>
+              <option>Other</option>
+            </select>
+          </label>
           <label><span>Tell us about your project <span class="opt">(optional)</span></span>
-            <textarea name="message" rows="3" placeholder="Current systems, modules you need, timeline…"></textarea>
+            <textarea name="message" rows="3" placeholder="Modules you need, timeline…"></textarea>
           </label>
           <button type="submit" class="btn btn-primary">
             Book My Consultation
@@ -202,7 +219,7 @@
           <a href="#" class="social-btn" aria-label="Unisas on LinkedIn">in</a>
           <a href="#" class="social-btn" aria-label="Unisas on X">X</a>
         </div>
-        <div class="footer-badges"><span>COMMUNITY</span><span>ENTERPRISE</span></div><img class="footer-partner" src="/assets/odoo-ready-partner.png" alt="Odoo Ready Partner" width="150" height="75" loading="lazy">
+        <img class="footer-partner" src="/assets/odoo-ready-partner.png" alt="Odoo Ready Partner" width="150" height="75" loading="lazy"><div class="footer-badges"><span>COMMUNITY</span><span>ENTERPRISE</span></div>
       </div>
       <div class="footer-col">
         <h4>Solutions</h4>
@@ -252,7 +269,7 @@
       </div>
     </div>
     <div class="footer-bottom has-disclaimer">
-      <span>© 2024 UNISAS. All rights reserved.</span>
+      <span>© 2026 UNISAS. All rights reserved.</span>
       <div class="footer-disclaimer">
         <p class="footer-disclaimer-label">Disclaimer</p>
         <ol>
@@ -261,8 +278,7 @@
         </ol>
       </div>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="/privacy-policy">Privacy Policy</a>
       </div>
     </div>
   </div>

@@ -57,8 +57,16 @@ export const POST: APIRoute = async ({ request }) => {
     landing_page: clip(body.landing_page, 500),
     user_agent: clip(request.headers.get('user-agent'), 300),
   };
+  const currentSystem = clip(body.current_system, 80);
+  if (currentSystem) lead.message = `Current system: ${currentSystem}${lead.message ? '\n\n' + lead.message : ''}`;
   lead.source = classifySource(lead.utm, lead.referrer);
-  if (!lead.name || !EMAIL_RE.test(lead.email)) return reply(400, { error: 'Name and a valid email are required' });
+  if (lead.name.length < 2 || !EMAIL_RE.test(lead.email) || lead.email.includes('..')) {
+    return reply(400, { error: 'Name and a valid email are required' });
+  }
+  if (lead.company.length < 2) return reply(400, { error: 'Company name is required' });
+  if (!/^\d{10}$/.test(lead.phone) || /^(\d)\1+$/.test(lead.phone)) {
+    return reply(400, { error: 'A valid 10-digit phone number is required' });
+  }
 
   const [wixRes, sbRes] = await Promise.allSettled([saveToWix(lead), saveToSupabase(lead)]);
   if (wixRes.status === 'rejected') console.error('Wix CMS insert failed', wixRes.reason);
