@@ -1,4 +1,5 @@
 ---
 import raw from '../html/inventory-management-software.html?raw';
+import { withHeader } from '../lib/withHeader';
 ---
-<Fragment set:html={raw} />
+<Fragment set:html={withHeader(raw, Astro.url.pathname)} />
